@@ -1,5 +1,7 @@
 package com.bruce.gen.genconf.vo;
 
+import com.bruce.gen.genconf.implementor.ThemeConfImplementor;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,5 +46,14 @@ public class GenConfModel {
 
     public void setMapConstants(Map<String, String> mapConstants) {
         this.mapConstants = mapConstants;
+    }
+
+    public ThemeModel getThemeById(String themeId) {
+        for(ThemeModel tm:this.themes){
+            if(tm.getId().equals(themeId)){
+                return tm;
+            }
+        }
+        return new ThemeModel();
     }
 }
